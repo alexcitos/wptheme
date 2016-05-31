@@ -1,0 +1,410 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"
+@import "https://fonts.googleapis.com/css?family=Roboto:400,700"
+
+// Vars
+
+@import vars
+
+
+// Mixins
+
+flex()
+  display -webkit-flex
+  display -moz-flex
+  display -ms-flex
+  display -o-flex
+  display flex
+
+animation(keyframe, args...)
+  -webkit-animation keyframe
+  -moz-animation keyframe
+  -o-animation keyframe
+  animation keyframe
+
+cero()
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+pos(top, right, bottom, left)
+  top top
+  right right
+  bottom bottom
+  left left
+
+
+body
+  background-color #e5e6e6
+  font-family Roboto, sans-serif
+
+.button-menu
+  background-color rgba($color1, 1)
+  z-index 30
+  position fixed
+  flex()
+  justify-content center
+  align-items center
+  pos(10px, null, null, 10px)
+  width 50px
+  height 50px
+  border-radius 50%
+  i
+    font-size 20px
+    color white
+    transition 1s all linear
+
+nav
+  position fixed
+  padding 0
+  flex()
+  justify-content center
+  transition .4s all linear
+  align-items center
+  z-index 10
+  pos(0, null, 0, null)
+  overflow-x hidden
+  overflow-y scroll
+  width 0
+  background-color rgba($color1, .9)
+  &.visible
+    left 0
+    width 281px
+  &.hidden
+    width 0
+    left -1px
+  ul
+    list-style none
+    position relative
+    margin-right 50px
+    text-align center
+    li
+      margin-left -35px
+      line-height 40px
+      width 100%
+      padding 10px 40px
+      border-bottom 1px solid white
+      &:last-child
+        border-bottom none
+      a
+        text-decoration none
+        z-index 15
+        font-size 20px
+        color white
+
+.submenu
+  height 0
+  width 0
+  overflow hidden
+  transition 1s all linear
+  &.active
+    height auto
+    overflow visible
+    width auto
+  &.hide
+    height 0
+    overflow hidden
+    width 0
+
+header
+  color #fffafa
+  flex()
+  justify-content center
+  width 100%
+  height 100%
+  background-image url($header_image)
+  background-size cover
+  background-position center
+  position absolute
+  cero()
+  .content
+    margin auto
+    padding 0 auto
+    text-align center
+    .title
+      font-size 40px
+    .subtitle
+      font-size 18px
+  .down-container
+    flex()
+    justify-content center
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    a
+      color white
+      .down
+        animation(arrow 1.8s infinite)
+        font-size 50px
+
+#content
+  margin-top 100vh
+  margin-left 12px
+  margin-right 12px
+  padding-top 60px
+  font-size 20px
+  .title-container
+    h1.sticky-logo
+      opacity 0
+      position absolute
+      top 90vh
+      &.sticky-logo-fixed
+        padding 7px 15px
+        position fixed
+        pos(0, 0, null, 0)
+        margin 0
+        text-align center
+        font-size 20px
+        z-index 29
+        color white
+        background-color $color1 
+        opacity .99
+
+.info
+.success
+.warning
+.error
+.note
+  border 1px solid
+  margin 10px 0px
+  padding 15px 10px 15px 50px
+  background-repeat no-repeat
+  background-position 10px center
+
+.info
+  color #00529B
+  background-color #BDE5F8
+  background-image url('../img/info.png')
+
+.success
+  color #4F8A10
+  background-color #DFF2BF
+  background-image url('../img/success.png')
+  a
+    color green
+
+.warning
+  color #9F6000
+  background-color #FEEFB3
+  background-image url('../img/warning.png')
+  a
+    color red
+
+.error
+  color #D8000C
+  background-color #FFBABA
+  background-image url('../img/error.png')
+  a
+    color black
+
+.note
+  background-color rgba(lightgray, .8)
+  padding-left 20px
+  border none
+  border-radius 5%
+  a
+    color purple
+  &:before
+    content '*'
+    padding-right 20px
+    display inline-block
+
+.list
+  display block
+  -webkit-margin-before 1em
+  -webkit-margin-after 1em
+  -webkit-margin-start 0px
+  -webkit-margin-end 0px
+  -webkit-padding-start 40px
+  li
+    list-style-type disc
+
+code
+  background  #FFFFE0
+  with 100%
+  padding 10px
+  border-radius 3px
+  border 2px solid  #333300
+
+.img
+  width 100%
+  &.center-img
+    flex()
+    justify-content center
+    align-items center
+    img
+      margin 0 auto
+  img
+    width auto
+    max-width 100%
+
+footer
+  margin-top 50px
+  position relative
+  color #fff
+  background-color $color2
+  min-height 400px
+  width 100%
+  .title
+    font-size 30px
+    text-align center
+    padding-top 10px
+  p
+    font-size 18px
+    font-weight bold
+    margin-left 25px
+  .social
+    flex()
+    flex-wrap wrap
+    justify-content space-around
+    align-items center
+    color #fff
+    min-width 70%
+    margin 0 auto
+    padding 20px
+    padding-top 10px
+    .ico
+      background-color $color1
+      border-radius 50%
+      display inline-block
+      width 50px
+      margin 5px
+      height 50px
+      flex()
+      align-items center
+      justify-content center
+      a
+        color white
+      .fa
+        font-size 21px
+        margin 0 auto
+  .foot
+    position absolute
+    width 100%
+    bottom 0
+    padding 1px
+    background-color $color1
+    p
+    a
+      font-size 15px
+      text-align center
+      font-weight normal
+    a
+      color #099
+      text-decoration none
+
+// Keyframes
+
+@keyframes arrow
+  0%
+  100%
+    font-size 50px
+  50%
+    font-size 60px
+
+@keyframes arrow-tablet
+    0%
+    100%
+      font-size 160px
+    50%
+      font-size 180px
+
+
+
+@media screen and (min-width: 768px)
+  .button-menu
+    pos(15px, null, null, 15px)
+    width 60px
+    height 60px
+    i
+      font-size 22px
+  nav
+    background-color rgba($color1, .97)
+    &.visible
+      width 500px
+    ul
+      margin 0
+      width 100%
+      li
+        a
+          font-size 25px
+      .submenu
+        &.active
+          width 80%
+
+  header
+    .content
+      .title
+        font-size 50px
+      .subtitle
+        font-size 20px
+    .down-container
+      a
+        font-size 80px
+        font-weight bold
+        animation(arrow-tablet 2s infinite)
+  .content
+    h1.sticky-logo-fixed
+      font-size 310px
+  footer
+    min-height 450px
+    p
+      margin-left 50px
+    .social
+      .ico
+        width 60px
+        height 60px
+        margin 5px 25px
+
+@media screen and (min-width: 1024px)
+  body
+    overflow-x hidden
+    width 100vw
+  #button-menu
+    .menu-pc
+      display none
+  nav
+    width 400px
+    left 0
+    background-color rgba($color1, 1)
+    &.pcvisible
+      width 400%
+      max-width 400px
+      left 0
+      overflow auto
+      ul
+        width 80%
+        li
+          width 80%
+  header
+    margin-left 400px
+    .title
+    .subtitle
+      margin-right 350px
+    .down-container
+      width 100%
+      .down
+        margin-right 400px
+  #content
+    padding-right 10px
+    padding-left 10px
+    margin-left 400px
+    left 400px
+    .sticky-logo-fixed
+      display none
+  footer
+    margin-left 400px
+    min-width 624px
+    width auto
+    max-width 100%
+    p
+    .social
+      max-width 600px
+    .foot
+      p
+      a
+        text-align left
+        min-width 0px
+        width auto
+        max-width 100%

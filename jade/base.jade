@@ -1,0 +1,18 @@
+doctype html
+html(lang="es")
+  include var
+  include head
+  body
+    include menu
+
+    include header
+
+    section#content
+      .container.title-container
+        h1.sticky-logo=title
+        //- a.subtitle=subtitle
+      include content
+
+    include footer
+
+    include scripts

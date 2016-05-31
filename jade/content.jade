@@ -1,0 +1,76 @@
+#Inicio.inicio.
+  Hola! Este es tu nuevo tema para wordpress!
+p.
+  En este template base te voy a explicar como configurar este theme, usando Jade y Stylus para compilar el HTML y el CSS (el contenido y los estilos de una página web).
+br
+h3#ingreso Ingreso
+p.
+h3#start Introducción
+p.
+  Lo primero que debes aprender es como cambiar este contenido, los titulos, los colores, etc...
+p.
+  Todo eso (menos este contenido) lo vas a poder cambiar en los archivos "var".jade y "var".styl, allí encontraras, variables, como title, subtitle, facebook, $color1 etc... Todas esas variables sirven para cambiar los colores titulos estilod y imagenes que tendra tu tema, y arriba de cada variable vas a ver comentarios que explican como y donde se veran los cambios que realices.
+p.success
+  | Recuerda que si tienes escrito tu codigo en HTML lo puedes transformar a Jade aquí: 
+  br
+  a(target="_blanck" href="http://html2jade.aaron-powell.com/") html2jade.aaron-powell.com
+  br
+  | O acá: 
+  br
+  a(target="_blanck" href="http://jade-lang.com/") jade-lang.com
+br
+h3#menu Menu
+p.
+  Para el menú, vas a tener que entrar al archivo "menu". En ese archivo lo unico que tienes que hacer es dentro de la etiqueta "ul" agregar etiquetas "li" y dentro etiquetas "a"... que son etiquetas para links... pero que con JS van a servirte para hacer links a lugares de tu theme animados!
+code
+  |ul
+  |  li
+  |    a(href="#")
+p.success.
+  Recuerda que gracias a Jade solo necesitas escribir el nombre de la etiqueta, y dentro (tabulado) lo que quieras, texto o más etiquetas!
+br
+p#dropdown.
+  Para un menu con submenus (dropdown) solo necesitas al "li" que pusiste al inicio darle la clase "menu-submenu", y dentro un "ul" con la clase "submenu", y podras poner los "li" y "a" que tu quieras!
+br
+code.
+  li.menu-submenu >
+    ul.submenu
+br
+br
+#img
+  h3 Images
+  p Para que tus imagenes sean responsive (que se vean bien tanto en pc como en tabletas y celulares) tienes que añadir un div con la clase "img", y dentro si puedes poner tu imagen.
+  .img
+    img(src="http://www.mycity-web.com/wp-content/uploads/2015/08/wordpress-website-development-hyderabad.jpg")
+  
+  p Si tus imagenes no son tan grandes para ocupar todo el ancho de tu pantalla, pudes agregarle al div que la tiene (".img") la clase "center-img":
+  .img.center-img
+    img(src="https://cdn.elegantthemes.com/blog/wp-content/uploads/2014/06/wordpress-custom-post-types.jpg")
+#contenido
+  h3 Modificar el contenido
+  p.
+    El contenido lo vas a poder modificar en un archivo "content.jade", Y simple tienes que agregar el contenido que quieras!!
+  p.
+    Solamente para que se pueda ir rapido desde el menu, tienes que añadir un id "#id-que-quieras" y en el menu, darle en el "href" de las etiquetas "a" el id (con el #).
+  h4 Mejorar el contenido
+  p Si quieres dar mensajes de error, warning, informacion, o notas puedes añadir las siguientes clases a tus divs:
+  code .success
+  .success.
+    Este es un mensaje muy bueno!
+  br
+  code .warning
+  .warning.
+    Este es un mensaje de alerta!
+  br
+  code .error
+  .error.
+    Este es un mensaje muy malo!
+  br
+  code .info
+  .info.
+    Este es un mensaje muy de información...
+  br
+  code .note
+  .note.
+    Esta es una nota
+
